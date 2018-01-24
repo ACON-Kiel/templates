@@ -1,0 +1,3 @@
+[submodule "ACon_beamer"]
+	path = ACon_beamer
+	url = git@github.com:ACON-Kiel/beamer
