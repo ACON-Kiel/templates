@@ -9,6 +9,7 @@
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "xkeyval"
@@ -122,6 +123,14 @@
     "my"
     "ct"
     "listenum"
+    "assumption"
+    "notation"
+    "proposition"
+    "corollary"
+    "example"
+    "exercise"
+    "solution"
+    "solutionNO"
     "definitionbox"
     "theorembox"
     "exercisebox"
@@ -131,78 +140,6 @@
     "subexample"
     "thesis")
    (LaTeX-add-lengths
-    "btopsep")
-   (LaTeX-add-xcolor-definecolors
-    "ctcolorfooterpage"
-    "ctcolorfooterline"
-    "ctcolorfootermark"
-    "ctcolorfootertitle"
-    "ctcolortitle"
-    "ctcolorpartnum"
-    "ctcolorpartline"
-    "ctcolorparttext"
-    "ctcolorchapternum"
-    "ctcolorchapterline"
-    "ctcolorsection"
-    "ctcolorsubsection"
-    "ctcolorsubsubsection"
-    "ctcolorparagraph"
-    "ctcolorfloatlabel"
-    "ctcolorlistlabel"
-    "ctcolormain"
-    "ctcoloraccessory"
-    "ctcolorblack"
-    "ctcolorgray"
-    "ctcolorgraylight"
-    "shadecolor"
-    "whitecolor"
-    "tintedcolor"
-    "definitioncolor"
-    "exercisecolor"
-    "solutioncolor"
-    "emptyspacecolor"
-    "lightcoralcolor"
-    "theoremcolor"
-    "lemmacolor"
-    "eqncolor"
-    "importantcolor"
-    "remarkcolor"
-    "examplecolor"
-    "color_todo")
-   (LaTeX-add-amsthm-newtheorems
-    "assumption"
-    "notation"
-    "proposition"
-    "corollary"
-    "example"
-    "exercise"
-    "solution"
-    "solutionNO")
-   (LaTeX-add-amsthm-newtheoremstyles
-    "mytheoremstyle"
-    "mytheoremstyleB")
-   (LaTeX-add-mdframed-mdfdefinestyles
-    "eqnstyle"
-    "grayboxstyle"
-    "sptheoremstyle"
-    "spremarkstyle"
-    "spexercisestyle"
-    "example"
-    "exercise"
-    "solution"
-    "lledefinition"
-    "boxdefinition"
-    "lletheorem"
-    "boxtheorem"
-    "llelemma"
-    "boxlemma"
-    "lleremark"
-    "boxremark")
-   (LaTeX-add-mdframed-mdtheorems
-    '("definition" "")
-    '("theorem" "")
-    '("lemma" "")
-    '("remark" "")
-    '("experience" "")))
+    "btopsep"))
  :latex)
 
