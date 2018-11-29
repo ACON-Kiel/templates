@@ -417,6 +417,7 @@
     '("gforv" ["argument"] 0)
     '("gfors" ["argument"] 0)
     '("ddgcorv" ["argument"] 0)
+    '("ddgcor" ["argument"] 0)
     '("dgcorv" ["argument"] 0)
     '("dgcor" ["argument"] 0)
     '("gcorv" ["argument"] 0)
@@ -937,6 +938,17 @@
     "tenewpage"
     "imag")
    (LaTeX-add-environments
-    "ncenter"))
+    "ncenter")
+   (LaTeX-add-color-definecolors
+    "myaqua"
+    "mygreen"
+    "myred"
+    "myblue"
+    "mywhite"
+    "mymgray"
+    "mylgray"
+    "mymagenta"
+    "myorange"
+    "myblack"))
  :latex)
 
