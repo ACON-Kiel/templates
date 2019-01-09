@@ -87,7 +87,7 @@
 \setkeys[ct]{cthesis}{bibfile=bib-refs}
 
 % OPTION refsection
-% --> values = 
+% --> values =
 \define@key[ct]{cthesis}{refsection}[chapter]{\def\cthesis@refsection{#1}}
 \setkeys[ct]{cthesis}{refsection=chapter}
 
@@ -115,6 +115,11 @@
 % --> values = true|false
 \define@boolkey[ct]{cthesis}{showfragen}[true]{}
 \setkeys[ct]{cthesis}{showfragen=true}
+
+% OPTION showblackboard <- for Exercises and Labs
+% --> values = true|false
+\define@boolkey[ct]{cthesis}{showblackboard}[true]{}
+\setkeys[ct]{cthesis}{showblackboard=true}
 
 \DeclareOptionX*{
 	\PackageWarning{cleanthesis}{Unknown option ‘\CurrentOption’}%
@@ -358,8 +363,8 @@ footskip=2cm,					% 	- footer skip size
 \setstretch{1.0}				% value for line spacing, use \setstretch{} or \singlespacing or \onehalfspacing or \doublespacing
 \setlength{\parindent}{0em}			% value for paragraph indentation
 \setlength{\parskip}{2ex}
-\clubpenalty = 10000				% prevent single lines at the beginning of a paragraph 
-\widowpenalty = 10000				% prevent single lines at the end of a paragraph 
+\clubpenalty = 10000				% prevent single lines at the beginning of a paragraph
+\widowpenalty = 10000				% prevent single lines at the end of a paragraph
 \displaywidowpenalty = 10000		%
 
 % **************************************************
@@ -416,7 +421,7 @@ footskip=2cm,					% 	- footer skip size
   \renewcommand{\labelenumi}{(\roman{enumi})}
   \begin{enumerate}[leftmargin=20pt]
   }{\end{enumerate}}
-      
+
 % **************************************************
 % Header and Footer
 % **************************************************
@@ -434,7 +439,7 @@ footskip=2cm,					% 	- footer skip size
 		\footnotesize%
 		{\color{ctcolorfootermark}\textbf{\thesection}}%
 		\quad%
-		{\color{ctcolorfootermark}#1}% %was ctcolorfootertitle 
+		{\color{ctcolorfootermark}#1}% %was ctcolorfootertitle
 	}%
 }
 %
@@ -718,7 +723,7 @@ footskip=2cm,					% 	- footer skip size
 			{\raggedright}%
 			[\phantomsection]
 %	}
-\fi                        
+\fi
 %
 % > formats: \paragraph
 \titlespacing{\paragraph}{0pt}{\parsep}{1em}%[0pt]
@@ -728,7 +733,7 @@ footskip=2cm,					% 	- footer skip size
 % {}%
 % {}%
 % []
-% 
+%
 
 % **************************************************
 % Handle languages
@@ -881,7 +886,7 @@ footskip=2cm,					% 	- footer skip size
 %%%% > Definitions
 
 \theoremstyle{mytheoremstyle}
-\newtheorem{assumption}{Annahme} 
+\newtheorem{assumption}{Annahme}
 \newtheorem{notation}{Notation}
 \newtheorem*{notation*}{Notation}
 \newtheorem{proposition}{\propositionname}
@@ -946,7 +951,7 @@ footskip=2cm,					% 	- footer skip size
   {\aftergroup\endmdf@trivlist\color@endgroup}
   {\endmdf@trivlist\color@endgroup\@doendpe}
   {}{}
-  
+
 %%%% > Length definitions
 
 \newlength{\btopsep}
@@ -961,6 +966,7 @@ footskip=2cm,					% 	- footer skip size
 \newenvironment{lemmabox}{}{}%
 \newenvironment{remarkbox}{}{}%
 \newenvironment{solutionbox}{}{}%
+\newenvironment{blackboard}{}{}
 
 % Boxed equations
 \mdfdefinestyle{eqnstyle}{%
@@ -1185,7 +1191,7 @@ footskip=2cm,					% 	- footer skip size
     \setlength{\itemsep}{1pt}
     \setlength{\parskip}{0pt}
     \setlength{\parsep}{0pt}
-  }{\end{enumerate}}  
+  }{\end{enumerate}}
 
 % **************************************************
 % ToC, LoF, LoT
@@ -1247,7 +1253,7 @@ footskip=2cm,					% 	- footer skip size
     \end{flushright}
   \end{minipage}%
 }%
-% 
+%
 % Clean signs around word origins in definitions
 % \newcommand{\cthesisorigin}[1]{\textsf{\textlangle}#1\textsf{\textrangle}}
 
@@ -1260,4 +1266,8 @@ footskip=2cm,					% 	- footer skip size
 \ifct@cthesis@showfragen
 \else
 \excludecomment{fragen}
+\fi
+\ifct@cthesis@showblackboard
+\else
+\excludecomment{blackboard}
 \fi
