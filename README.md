@@ -37,8 +37,7 @@ A simple example for exercises and labs is given below:
     bibstyle=numeric,
     deutsch,
     showsolution=false,
-    showfragen=false,
-    showblackboard=false
+    showfragen=false
 ]{acon_reports}
 
 \usepackage{acon_math_formatting}
@@ -89,29 +88,21 @@ Annotations for the usage of the template:
 	* solution (normally hidden use ```showsolution=true``` as an option for the ```acon_reports``` package)
 	* fragen (normally hidden use ```showfragen=true``` as an option for the ```acon_reports``` package)
 * Implementation of figures and tables in the previously mentioned environments! **Do not use a figure or table environment there!** The related figures/tables are forced to stay in the related environment.
-* figures:
-```
-\begin{center}
-    \includegraphics[]{pictiure.pdf}
-    \mycaptionof{figure}{Caption of table.}
-    \label{label_for_figure}
-\end{center}
-```
-* tables:
-```
-\begin{center}
-    \begin{tabular}{c|c}
-      a & b
-    \end{tabular}
-    \mycaptionof{table}{Caption of the table.}
-    \label{label_for_table}
-\end{center}
-```
-### Custom deactivate-able environments
-This templates is able to use different activate-able environments:
-* solution
-* fragen
-* blackboard.
-
-The environments `solution` and `fragen` behave like a theorem environment, while `blackboard` behaves like a comment in the text and can be placed also math environments.
-The environments are included using `\begin{env}` and `\end{env}`.
+	* figures:
+	 	```
+		\begin{center}
+		  \includegraphics[]{pictiure.pdf}
+		  \mycaptionof{figure}{Caption of table.}
+		  \label{label_for_figure}
+		\end{center}
+		```
+	* tables:
+	 	```
+		\begin{center}
+			\begin{tabular}{c|c}
+				a & b
+			\end{tabular}
+			\mycaptionof{table}{Caption of the table.}
+			\label{label_for_table}
+		\end{center}
+		```
