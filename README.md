@@ -35,7 +35,6 @@ A simple example for exercises and labs is given below:
     refsection=chapter,
     bibfile={bachelorpraktikumreferenzen},
     bibstyle=numeric,
-    deutsch,
     showsolution=false,
     showfragen=false,
     showblackboard=false
