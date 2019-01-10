@@ -116,15 +116,10 @@
 \define@boolkey[ct]{cthesis}{showfragen}[true]{}
 \setkeys[ct]{cthesis}{showfragen=true}
 
-% OPTION showblackboard <- for Exercises and Labs
+% OPTION showblackboardverbal <- for Exercises and Labs
 % --> values = true|false
-\define@boolkey[ct]{cthesis}{showblackboard}[true]{}
-\setkeys[ct]{cthesis}{showblackboard=true}
-
-% OPTION showverbal <- for Exercises and Labs
-% --> values = true|false
-\define@boolkey[ct]{cthesis}{showverbal}[true]{}
-\setkeys[ct]{cthesis}{showverbal=true}
+\define@boolkey[ct]{cthesis}{showblackboardverbal}[true]{}
+\setkeys[ct]{cthesis}{showblackboardverbal=true}
 
 \DeclareOptionX*{
         \PackageWarning{cleanthesis}{Unknown option ‘\CurrentOption’}%
@@ -1267,8 +1262,30 @@ footskip=2cm,                                   %       - footer skip size
 \definecolor{blackboardgreen}{rgb}{0,.4,0}
 \definecolor{verbalblue}{rgb}{0,0,0.99}
 
-\specialcomment{blackboard}{\begingroup\color{blackboardgreen}}{\endgroup}
-\specialcomment{verbal}{\begingroup\color{verbalblue}}{\endgroup}
+\RequirePackage{verbatim}
+\newenvironment{blackboard}%
+        {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\comment}%
+                    {\color{blackboardgreen}}%
+                    }%
+         {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\endcomment}%
+                    {}%
+          }
+\newenvironment{verbal}%
+        {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\comment}%
+                    {\color{verbalblue}}%
+                    }%
+         {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\endcomment}%
+                    {}%
+          }
+
 
 \ifct@cthesis@showsolution
 \else
@@ -1278,11 +1295,7 @@ footskip=2cm,                                   %       - footer skip size
 \else
 \excludecomment{fragen}
 \fi
-\ifct@cthesis@showblackboard
+\ifct@cthesis@showblackboardverbal
+\newcommand{\includeverbal}{show them}
 \else
-\excludecomment{blackboard}
-\fi
-\ifct@cthesis@showverbal
-\else
-\excludecomment{verbal}
 \fi
