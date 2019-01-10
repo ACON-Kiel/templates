@@ -38,7 +38,8 @@ A simple example for exercises and labs is given below:
     deutsch,
     showsolution=false,
     showfragen=false,
-    showblackboard=false
+    showblackboard=false,
+    showverbal=false
 ]{acon_reports}
 
 \usepackage{acon_math_formatting}
@@ -111,7 +112,8 @@ Annotations for the usage of the template:
 This templates is able to use different activate-able environments:
 * solution
 * fragen
-* blackboard.
+* blackboard
+* verbal.
 
-The environments `solution` and `fragen` behave like a theorem environment, while `blackboard` behaves like a comment in the text and can be placed also math environments.
+The environments `solution` and `fragen` behave like a theorem environment, while `blackboard` and `verbal` behave like a comment in the text and can be placed also math environments.
 The environments are included using `\begin{env}` and `\end{env}`.
