@@ -116,11 +116,6 @@
 \define@boolkey[ct]{cthesis}{showfragen}[true]{}
 \setkeys[ct]{cthesis}{showfragen=true}
 
-% OPTION showblackboard <- for Exercises and Labs
-% --> values = true|false
-\define@boolkey[ct]{cthesis}{showblackboard}[true]{}
-\setkeys[ct]{cthesis}{showblackboard=true}
-
 \DeclareOptionX*{
         \PackageWarning{cleanthesis}{Unknown option ‘\CurrentOption’}%
 }
@@ -967,7 +962,6 @@ footskip=2cm,                                   %       - footer skip size
 \newenvironment{lemmabox}{}{}%
 \newenvironment{remarkbox}{}{}%
 \newenvironment{solutionbox}{}{}%
-\newenvironment{blackboard}{}{}
 
 % Boxed equations
 \mdfdefinestyle{eqnstyle}{%
@@ -1267,8 +1261,4 @@ footskip=2cm,                                   %       - footer skip size
 \ifct@cthesis@showfragen
 \else
 \excludecomment{fragen}
-\fi
-\ifct@cthesis@showblackboard
-\else
-\excludecomment{blackboard}
 \fi
