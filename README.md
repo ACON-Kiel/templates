@@ -37,9 +37,7 @@ A simple example for exercises and labs is given below:
     bibstyle=numeric,
     deutsch,
     showsolution=false,
-    showfragen=false,
-    showblackboard=false,
-    showverbal=false
+    showfragen=false
 ]{acon_reports}
 
 \usepackage{acon_math_formatting}
