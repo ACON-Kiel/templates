@@ -967,7 +967,6 @@ footskip=2cm,                                   %       - footer skip size
 \newenvironment{lemmabox}{}{}%
 \newenvironment{remarkbox}{}{}%
 \newenvironment{solutionbox}{}{}%
-\newenvironment{blackboard}{}{}
 
 % Boxed equations
 \mdfdefinestyle{eqnstyle}{%
@@ -1260,6 +1259,8 @@ footskip=2cm,                                   %       - footer skip size
 
 % Special environments that can be shown or not shown
 \RequirePackage{comment}
+\specialcomment{blackboard}{\begingroup\color{red}}{\endgroup}
+
 \ifct@cthesis@showsolution
 \else
 \excludecomment{solution}
