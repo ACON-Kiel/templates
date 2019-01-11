@@ -116,6 +116,11 @@
 \define@boolkey[ct]{cthesis}{showfragen}[true]{}
 \setkeys[ct]{cthesis}{showfragen=true}
 
+% OPTION showblackboardverbal <- for Exercises and Labs
+% --> values = true|false
+\define@boolkey[ct]{cthesis}{showblackboardverbal}[true]{}
+\setkeys[ct]{cthesis}{showblackboardverbal=true}
+
 \DeclareOptionX*{
         \PackageWarning{cleanthesis}{Unknown option ‘\CurrentOption’}%
 }
@@ -1254,6 +1259,34 @@ footskip=2cm,                                   %       - footer skip size
 
 % Special environments that can be shown or not shown
 \RequirePackage{comment}
+\definecolor{blackboardgreen}{rgb}{0,.4,0}
+\definecolor{verbalblue}{rgb}{0,0,0.99}
+
+\RequirePackage{verbatim}
+\newenvironment{blackboard}%
+        {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\comment}%
+                    {\color{blackboardgreen}}%
+                    }%
+         {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\endcomment}%
+                    {}%
+          }
+\newenvironment{verbal}%
+        {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\comment}%
+                    {\color{verbalblue}}%
+                    }%
+         {
+            \ifthenelse{\isundefined{\includeverbal}}%
+                    {\expandafter\endcomment}%
+                    {}%
+          }
+
+
 \ifct@cthesis@showsolution
 \else
 \excludecomment{solution}
@@ -1261,4 +1294,8 @@ footskip=2cm,                                   %       - footer skip size
 \ifct@cthesis@showfragen
 \else
 \excludecomment{fragen}
+\fi
+\ifct@cthesis@showblackboardverbal
+\newcommand{\includeverbal}{show them}
+\else
 \fi

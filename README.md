@@ -36,7 +36,8 @@ A simple example for exercises and labs is given below:
     bibfile={bachelorpraktikumreferenzen},
     bibstyle=numeric,
     showsolution=false,
-    showfragen=false
+    showfragen=false,
+    showblackboardverbal=false
 ]{acon_reports}
 
 \usepackage{acon_math_formatting}
@@ -87,21 +88,32 @@ Annotations for the usage of the template:
 	* solution (normally hidden use ```showsolution=true``` as an option for the ```acon_reports``` package)
 	* fragen (normally hidden use ```showfragen=true``` as an option for the ```acon_reports``` package)
 * Implementation of figures and tables in the previously mentioned environments! **Do not use a figure or table environment there!** The related figures/tables are forced to stay in the related environment.
-	* figures:
-	 	```
-		\begin{center}
-		  \includegraphics[]{pictiure.pdf}
-		  \mycaptionof{figure}{Caption of table.}
-		  \label{label_for_figure}
-		\end{center}
-		```
-	* tables:
-	 	```
-		\begin{center}
-			\begin{tabular}{c|c}
-				a & b
-			\end{tabular}
-			\mycaptionof{table}{Caption of the table.}
-			\label{label_for_table}
-		\end{center}
-		```
+* figures:
+```
+\begin{center}
+    \includegraphics[]{pictiure.pdf}
+    \mycaptionof{figure}{Caption of table.}
+    \label{label_for_figure}
+\end{center}
+```
+* tables:
+```
+\begin{center}
+    \begin{tabular}{c|c}
+      a & b
+    \end{tabular}
+    \mycaptionof{table}{Caption of the table.}
+    \label{label_for_table}
+\end{center}
+```
+### Custom deactivate-able environments
+This templates is able to use different activate-able environments:
+* solution
+* fragen
+* blackboard
+* verbal.
+
+The environments `solution` and `fragen` behave like a theorem environment and will be activated with the variables `showsolution` and `showfragen` in the options for `acon_reports`.
+The `blackboard` and `verbal` environment behave like a comment in the text and can be placed in `equation` environments (`align` causes an error!).
+These two environments will be activated with the `showblackboardverbal` variable as an option for `acon_reports`.
+All environments are included using `\begin{env}` and `\end{env}`.
