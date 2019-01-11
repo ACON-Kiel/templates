@@ -115,6 +115,6 @@ This templates is able to use different activate-able environments:
 * verbal.
 
 The environments `solution` and `fragen` behave like a theorem environment and will be activated with the variables `showsolution` and `showfragen` in the options for `acon_reports`.
-The `blackboard` and `verbal` environment behave like a comment in the text and can be placed also math environments.
+The `blackboard` and `verbal` environment behave like a comment in the text and can be placed in `equation` environments (`align` causes an error!).
 These two environments will be activated with the `showblackboardverbal` variable as an option for `acon_reports`.
 All environments are included using `\begin{env}` and `\end{env}`.
