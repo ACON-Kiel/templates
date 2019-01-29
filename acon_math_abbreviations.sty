@@ -10,11 +10,7 @@
 \newif\if@english\@englishfalse
 \DeclareOption{english}{\global\@englishtrue}
 \def\altEnglish#1#2{\if@english{#1}\else{#2}\fi}
-%
-% \newif\if@myabbrevs\@myabbrevsfalse
-% \DeclareOption{myabbrevs}{\global\@myabbrevstrue}
-% \def\altMyAbbrevs#1#2{\if@myabbrevs{#1}\else{#2}\fi}
-%
+
 \ProcessOptions
 
 %
@@ -51,15 +47,14 @@
 \RequirePackage{dsfont}
 \RequirePackage{amsmath,amssymb,amsfonts,amscd}
 \RequirePackage{trfsigns}
-%\altMyAbbrevs{\RequirePackage{myabbrevs}}{}
-\RequirePackage{myabbrevs}
 \RequirePackage[thinspace,thinqspace,squaren,textstyle]{SIunits}
+\RequirePackage{xspace}
 
 %====================================
 %Listings
 %====================================
-\renewcommand{\theenumi}{(\roman{enumi})} 
-\renewcommand{\theenumii}{(\alph{enumii})} 
+\renewcommand{\theenumi}{(\roman{enumi})}
+\renewcommand{\theenumii}{(\alph{enumii})}
 \renewcommand{\labelenumi}{\hbox{\theenumi}}
 \renewcommand{\labelenumii}{\hbox{\theenumii}}
 
@@ -108,56 +103,56 @@
 %====================================
 %Text
 %====================================
-\newabbrev\ZDGL{\altEnglish{state space represenation}{Zustandsdifferenzialgleichung}}
-\newabbrev\DGL{Differenzialgleichung}
-\newabbrev\DGLn{Differenzialgleichungen}
-\newabbrev\AB{\altEnglish{initial condition}{Anfangsbedingung}}
-\newabbrev\ABn{Anfangsbedingungen}
-\newabbrev\EAV{Eingangs--Ausgangs--Verhalten}
-\newabbrev\EAVs{Eingangs--Ausgangs--Verhaltens}
-\newabbrev\EAS{Eingangs--Ausgangs--Stabilität}
-\newabbrev\EEAL{Exakte Eingangs--/Aus\-gangs\-lin\-ear\-is\-ier\-ung}
-\newabbrev\EnEAL{Exakten Eingangs--/Aus\-gangs\-lin\-ear\-is\-ier\-ung}
-\newabbrev\EEZL{Exakte Eingangs--/Zu\-stands\-lin\-ear\-is\-ier\-ung}
-\newabbrev\EnEZL{Exakten Eingangs--/Zu\-stands\-lin\-ear\-is\-ier\-ung}
-\newabbrev\eas{eingangs--ausgangs--stabil}
-\newabbrev\ease{eingangs--ausgangs--stabile}
-\newabbrev\easen{eingangs--ausgangs--stabilen}
-\newabbrev\uf{über\-tra\-gungs\-funk\-tion}
-\newabbrev\ufn{über\-tra\-gungs\-funk\-tionen}
-\newabbrev\UF{Über\-tra\-gungs\-funk\-tion}
-\newabbrev\UFn{Über\-tra\-gungs\-funk\-tionen}
-\newabbrev\UM{Über\-tra\-gungs\-ma\-trix}
-\newabbrev\dB{dB}
-\newabbrev\EANF{Eingangs--Ausgangs--Nor\-mal\-form}
-\newabbrev\OP{optimization problem}
-\newabbrev\OPs{optimization problems}
-\newabbrev\KS{Koordinatensystem}
-\newabbrev\KSe{Koordinatensysteme}
-\newabbrev\KSn{Koordinatensystemen}
-\newabbrev\KSs{Koordinatensystems}
-\newabbrev\OpS{\textit{Operational Space}}
-\newabbrev\Link{\textit{Link}}
-\newabbrev\Links{\textit{Links}}
-\newabbrev\gMJac{geometrische Manipulator Jacobi--Matrix}
-\newabbrev\gMJacn{geometrischen Manipulator Jacobi--Matrix}
-\newabbrev\gMJacnn{geometrischen Manipulator Jacobi--Matrizen}
-\newabbrev\aMJac{analytische Manipulator Jacobi--Matrix}
-\newabbrev\aMJacn{analytischen Manipulator Jacobi--Matrix}
-\newabbrev\aMJacnn{analytischen Manipulator Jacobi--Matrizen}
-\newabbrev\MATLAB{\textsc{MATLAB}}
-\newabbrev\SIMULINK{\textsc{Simulink}}
-\newabbrev\MMA{\textsc{Mathematica}}
-\newabbrev\MAXIMA{\textsc{Maxima}}
-\newabbrev\MAPLE{\textsc{Maple}}
-\newabbrev\OCTAVE{\textsc{Octave}}
-\newabbrev\UMFPACK{\textsc{UMFPACK}}
-\newabbrev\ACADO{\textsc{ACADO}}
-\newabbrev\IPOPT{\textsc{Ipopt}}
-\newabbrev\PYTHON{\textsc{python}}
+\newcommand{\ZDGL}{\altEnglish{state space represenation}{Zustandsdifferenzialgleichung}\xspace}
+\newcommand{\DGL}{Differenzialgleichung\xspace}
+\newcommand{\DGLn}{Differenzialgleichungen\xspace}
+\newcommand{\AB}{\altEnglish{initial condition}{Anfangsbedingung}\xspace}
+\newcommand{\ABn}{Anfangsbedingungen\xspace}
+\newcommand{\EAV}{Eingangs--Ausgangs--Verhalten\xspace}
+\newcommand{\EAVs}{Eingangs--Ausgangs--Verhaltens\xspace}
+\newcommand{\EAS}{Eingangs--Ausgangs--Stabilität\xspace}
+\newcommand{\EEAL}{Exakte Eingangs--/Aus\-gangs\-lin\-ear\-is\-ier\-ung\xspace}
+\newcommand{\EnEAL}{Exakten Eingangs--/Aus\-gangs\-lin\-ear\-is\-ier\-ung\xspace}
+\newcommand{\EEZL}{Exakte Eingangs--/Zu\-stands\-lin\-ear\-is\-ier\-ung\xspace}
+\newcommand{\EnEZL}{Exakten Eingangs--/Zu\-stands\-lin\-ear\-is\-ier\-ung\xspace}
+\newcommand{\eas}{eingangs--ausgangs--stabil\xspace}
+\newcommand{\ease}{eingangs--ausgangs--stabile\xspace}
+\newcommand{\easen}{eingangs--ausgangs--stabilen\xspace}
+\newcommand{\uf}{über\-tra\-gungs\-funk\-tion\xspace}
+\newcommand{\ufn}{über\-tra\-gungs\-funk\-tionen\xspace}
+\newcommand{\UF}{Über\-tra\-gungs\-funk\-tion\xspace}
+\newcommand{\UFn}{Über\-tra\-gungs\-funk\-tionen\xspace}
+\newcommand{\UM}{Über\-tra\-gungs\-ma\-trix\xspace}
+\newcommand{\dB}{dB\xspace}
+\newcommand{\EANF}{Eingangs--Ausgangs--Nor\-mal\-form\xspace}
+\newcommand{\OP}{optimization problem\xspace}
+\newcommand{\OPs}{optimization problems\xspace}
+\newcommand{\KS}{Koordinatensystem\xspace}
+\newcommand{\KSe}{Koordinatensysteme\xspace}
+\newcommand{\KSn}{Koordinatensystemen\xspace}
+\newcommand{\KSs}{Koordinatensystems\xspace}
+\newcommand{\OpS}{\textit{Operational Space}\xspace}
+\newcommand{\Link}{\textit{Link}\xspace}
+\newcommand{\Links}{\textit{Links}\xspace}
+\newcommand{\gMJac}{geometrische Manipulator Jacobi--Matrix\xspace}
+\newcommand{\gMJacn}{geometrischen Manipulator Jacobi--Matrix\xspace}
+\newcommand{\gMJacnn}{geometrischen Manipulator Jacobi--Matrizen\xspace}
+\newcommand{\aMJac}{analytische Manipulator Jacobi--Matrix\xspace}
+\newcommand{\aMJacn}{analytischen Manipulator Jacobi--Matrix\xspace}
+\newcommand{\aMJacnn}{analytischen Manipulator Jacobi--Matrizen\xspace}
+\newcommand{\MATLAB}{\textsc{MATLAB}\xspace}
+\newcommand{\SIMULINK}{\textsc{Simulink}\xspace}
+\newcommand{\MMA}{\textsc{Mathematica}\xspace}
+\newcommand{\MAXIMA}{\textsc{Maxima}\xspace}
+\newcommand{\MAPLE}{\textsc{Maple}\xspace}
+\newcommand{\OCTAVE}{\textsc{Octave}\xspace}
+\newcommand{\UMFPACK}{\textsc{UMFPACK}\xspace}
+\newcommand{\ACADO}{\textsc{ACADO}\xspace}
+\newcommand{\IPOPT}{\textsc{Ipopt}\xspace}
+\newcommand{\PYTHON}{\textsc{python}\xspace}
 \RequirePackage{mflogo} %-> \MF and \MP
 \newfont{\normald}{logo10 scaled 1024}
-\newabbrev\FEATPOST{{\normald FEATPOST}}
+\newcommand{\FEATPOST}{{\normald FEATPOST}\xspace}
 
 %====================================
 %Commenting
@@ -226,7 +221,7 @@
 %Mappings, sets, and sequences
 %====================================
 \newcommand{\range}[1]{\mathrm{ran}#1}
-\newcommand{\kernel}[1]{\mathrm{ker}#1} 
+\newcommand{\kernel}[1]{\mathrm{ker}#1}
 \newcommand{\spectrum}[1]{\sigma(#1)}
 \newcommand{\trace}{\mathrm{tr}}
 \newcommand{\pointspectrum}[1]{\sigma_p(#1)}
@@ -388,14 +383,14 @@
 \newcommand{\intor}{\text{int}}
 
 %====================================
-%Special numbers 
+%Special numbers
 %====================================
 \providecommand{\E}{\mathrm{e}}
 \providecommand{\I}{\mathrm{i}}
 \let\imag=\I
 
 %====================================
-%Matrices and special 
+%Matrices and special
 %====================================
 \renewcommand{\vec}[1]{\bs{#1}}
 
@@ -488,7 +483,7 @@
 \newcommand{\mKC}{S} %Kalman controllability matrix
 \newcommand{\mKCa}{(\mA,\mB)}
 \newcommand{\mKCat}{(\mAt,\mBt)}
-\newcommand{\mKCt}{\bar{S}} % 
+\newcommand{\mKCt}{\bar{S}} %
 \newcommand{\mKO}{O} %Kalman observability matrix
 \newcommand{\mKOa}{(\mC,\mA)}
 \newcommand{\mKOat}{(\mCt,\mAt)}
@@ -622,7 +617,7 @@
 \newcommand{\htran}{\alpha}
 \newcommand{\hdurch}{k}
 \newcommand{\visc}{\eta}
-\newcommand{\kvisc}{\nu_{\text{kin}}} 
+\newcommand{\kvisc}{\nu_{\text{kin}}}
 
 \newcommand{\NuZ}{\text{Nu}}
 \newcommand{\NuZav}{\overline{\NuZ}}
@@ -672,16 +667,16 @@
 %====================================
 %Independent coordinates
 %====================================
-\newcommand{\tupex}[2]{{#1}_{(#2\vert)}} 
+\newcommand{\tupex}[2]{{#1}_{(#2\vert)}}
 %used to exclude an index from a tuple
-\newcommand{\tupexList}[2]{{#1}_{(#2)}} 
+\newcommand{\tupexList}[2]{{#1}_{(#2)}}
 %used to exclude an index from a tuple
-\newcommand{\ts}[1][]{t{#1}}    
-\newcommand{\tsb}{\bar{\ts}}    
+\newcommand{\ts}[1][]{t{#1}}
+\newcommand{\tsb}{\bar{\ts}}
 \newcommand{\tsd}{T}
-\newcommand{\tsf}{\tau} 
+\newcommand{\tsf}{\tau}
 \newcommand{\tsi}{\ts_0}
-%final time of existence interval        
+%final time of existence interval
 \newcommand{\zs}[1][]{z^{#1}}
 \newcommand{\zsA}[2][]{z^{#1}_{#2}}
 \newcommand{\zsb}[1][]{\bar{z}^{#1}}
@@ -689,7 +684,7 @@
 \newcommand{\zv}{{\zs[]}}
 \newcommand{\Zv}{{\Zs[]}}
 \newcommand{\zvex}[1][\ini]{\tupex{\zv}{#1}}
-\newcommand{\zvexList}[1][\ini\vert]{\tupexList{\zv}{{#1}}} 
+\newcommand{\zvexList}[1][\ini\vert]{\tupexList{\zv}{{#1}}}
 \newcommand{\czs}[1][\inj]{(\zs[#1])}
 \newcommand{\czst}[1]{({\zs[{#1}]},\ts)}
 \newcommand{\czvt}{(\zv,\ts)}
@@ -754,9 +749,9 @@
 %System state
 %------------------------------------
 \newcommand{\xs}[2][\cts]{x_{#2}#1}
-\newcommand{\xst}[1][\cts]{x#1}  
+\newcommand{\xst}[1][\cts]{x#1}
 \newcommand{\xsd}[2][\cts]{x^{\ast}_{#2}#1}
-\newcommand{\xstd}[1][\cts]{x^{\ast}#1}    
+\newcommand{\xstd}[1][\cts]{x^{\ast}#1}
 \newcommand{\xv}[1][\cts]{\bs{x}#1}
 \newcommand{\xvd}[1][\cts]{\bs{x}^{\ast}#1}
 \newcommand{\Dxs}[2][\cts]{\Delta {x}_{#2}#1}
@@ -797,10 +792,10 @@
 
 % - Laplace
 \newcommand{\xsL}[2][\css]{\lap{x}_{#2}#1}
-\newcommand{\xstL}[1][\css]{\lap{x}#1} 
+\newcommand{\xstL}[1][\css]{\lap{x}#1}
 \newcommand{\xvL}[1][\css]{\lap{\bs{x}}#1}
 
-% - observer 
+% - observer
 \newcommand{\obs}[1]{\hat{#1}}
 \newcommand{\obserr}[1]{\tilde{#1}}
 \newcommand{\xsob}[2][\cts]{\obs{x}_{#2}#1}
@@ -825,22 +820,22 @@
 %------------------------------------
 %Input
 %------------------------------------
-\newcommand{\us}[2][\cts]{u_{#2}#1}   
-\newcommand{\ust}[1][\cts]{u#1}   
+\newcommand{\us}[2][\cts]{u_{#2}#1}
+\newcommand{\ust}[1][\cts]{u#1}
 \newcommand{\usd}[2][\cts]{u^{\ast}_{#2}#1}
 \newcommand{\Dust}[1][(\ts)]{\Delta u#1}
-\newcommand{\ustd}[1][\cts]{u^{\ast}#1}  
+\newcommand{\ustd}[1][\cts]{u^{\ast}#1}
 \newcommand{\uv}[1][\cts]{\bs{u}#1}
 \newcommand{\uvd}[1][\cts]{\bs{u}^{\ast}#1}
 \newcommand{\Duv}[1][(\ts)]{\Delta\bs{u}#1}
 
 % - stationary
-\newcommand{\usR}[1][]{u_{#1R}}  
+\newcommand{\usR}[1][]{u_{#1R}}
 \newcommand{\uvR}[1][]{\bs{u}_{#1R}}
 
 % - Laplace
-\newcommand{\usL}[2][\css]{\lap{u}_{#2}#1}   
-\newcommand{\ustL}[1][\css]{\lap{u}#1}   
+\newcommand{\usL}[2][\css]{\lap{u}_{#2}#1}
+\newcommand{\ustL}[1][\css]{\lap{u}#1}
 \newcommand{\uvL}[1][\css]{\lap{\bs{u}}#1}
 \newcommand{\DustL}[1][\css]{\Delta \hat{u}#1}
 
@@ -868,8 +863,8 @@
 \newcommand{\yvR}[1][]{\bs{y}_{#1R}}
 
 % - Laplace
-\newcommand{\ysL}[2][\css]{\lap{y}_{#2}#1}   
-\newcommand{\ystL}[1][\css]{\lap{y}#1}   
+\newcommand{\ysL}[2][\css]{\lap{y}_{#2}#1}
+\newcommand{\ystL}[1][\css]{\lap{y}#1}
 \newcommand{\yvL}[1][\css]{\lap{\bs{y}}#1}
 \newcommand{\DysL}[2][\css]{\Delta \hat{y}_{#2}#1}
 
@@ -915,7 +910,7 @@
 \newcommand{\esinf}{\est[_\infty]}
 \newcommand{\ev}[1][\cts]{\vec{e}#1}
 
-% - derivatives 
+% - derivatives
 \newcommand{\dev}[1][\cts]{\dot{\vec{e}}#1}
 
 % - Laplace
@@ -959,11 +954,11 @@
 %------------------------------------
 %Observer
 %------------------------------------
-\newcommand{\xobss}[1][\cts]{\hat{x}#1}    
-\newcommand{\xeobss}[1][\cts]{\hat{x}_e#1}    
-\newcommand{\xoess}[1][\cts]{\tilde{x}#1}    
-\newcommand{\xeoess}[1][\cts]{\tilde{x}_e#1}    
-    
+\newcommand{\xobss}[1][\cts]{\hat{x}#1}
+\newcommand{\xeobss}[1][\cts]{\hat{x}_e#1}
+\newcommand{\xoess}[1][\cts]{\tilde{x}#1}
+\newcommand{\xeoess}[1][\cts]{\tilde{x}_e#1}
+
 \newcommand{\yobss}[1][\cts]{\hat{y}#1}
 \newcommand{\yeobss}[1][\cts]{\hat{y}_e#1}
 \newcommand{\yoess}[1][\cts]{\tilde{y}#1}
@@ -997,7 +992,7 @@
 \newcommand{\graph}[1]{\text{Graph}(#1)}
 \newcommand{\indS}[2][]{S^{#1}_{{#2}}}
 \newcommand{\indSh}[2][]{{S}^{#1,1}_{{#2}}}
-\newcommand{\indSt}[2][]{{S}^{#1,2}_{{#2}}} 
+\newcommand{\indSt}[2][]{{S}^{#1,2}_{{#2}}}
 \newcommand{\indI}[1][]{I_{#1}}
 
 %Spectral analysis
@@ -1013,13 +1008,13 @@
 \newcommand{\uml}[2][\css]{\hat{u}_{#2}#1}
 \newcommand{\ym}[2][\cts]{y_{#2}#1}
 \newcommand{\yml}[2][\css]{\hat{y}_{#2}#1}
-\newcommand{\xmkj}[1][\cts]{{\xm[#1]{\inkj}}} 
+\newcommand{\xmkj}[1][\cts]{{\xm[#1]{\inkj}}}
 \newcommand{\xmkjS}[1][\inkj]{{\xmS[]{#1}}}  %stationary value
-\newcommand{\xmkjl}[1][\css]{{\xml[#1]{\inkj}}} 
-\newcommand{\umkj}[2][\cts]{{\um[#1]{#2}}} 
-\newcommand{\umkjl}[2][\css]{{\uml[#1]{#2}}} 
-\newcommand{\ymkj}[2][\cts]{{\ym[#1]{#2}}} 
-\newcommand{\ymkjl}[2][\css]{{\yml[#1]{#2}}} 
+\newcommand{\xmkjl}[1][\css]{{\xml[#1]{\inkj}}}
+\newcommand{\umkj}[2][\cts]{{\um[#1]{#2}}}
+\newcommand{\umkjl}[2][\css]{{\uml[#1]{#2}}}
+\newcommand{\ymkj}[2][\cts]{{\ym[#1]{#2}}}
+\newcommand{\ymkjl}[2][\css]{{\yml[#1]{#2}}}
 \newcommand{\baseo}[1][]{\bs{e}_{#1}}
 \newcommand{\basea}[1][]{\bs{f}_{#1}}
 
@@ -1037,13 +1032,13 @@
 %Integration
 \newcommand{\intd}{{\mathrm{d}}}
 
-%Series 
+%Series
 \newcommand{\convrad}[1][]{\varrho_{#1}}
 
 %====================================
 %Global vectors
 %====================================
-\newcommand{\novec}[1][0]{\ifthenelse{\equal{#1}{0}}{\mathvecb{n}}{\mathvec{n}^{#1}}} 
+\newcommand{\novec}[1][0]{\ifthenelse{\equal{#1}{0}}{\mathvecb{n}}{\mathvec{n}^{#1}}}
 \newcommand{\tavec}[1][0]{\ifthenelse{\equal{#1}{0}}{\mathvecb{t}}{\mathvec{t}^{#1}}}
 
 
@@ -1091,7 +1086,7 @@
 %Spectral analysis
 %====================================
 
-%Eigenproblem 
+%Eigenproblem
 \newcommand{\evl}[1][]{\lambda_{#1}}
 \newcommand{\evsymb}{v}
 \newcommand{\avsymb}{w}
@@ -1125,19 +1120,19 @@
 \newcommand{\tga}[1][]{a_{#1}}
 \newcommand{\tgb}[1][]{b_{#1}}
 \newcommand{\tgbb}[1][]{\bar{b}_{#1}}
-\newcommand{\tgnex}[2][s]{\tgb[0]+\tgb[1]{#1}+\cdots+\tgb[#2-1]{#1}^{#2-1}+\tgb[#2]{#1}^{#2}} 
+\newcommand{\tgnex}[2][s]{\tgb[0]+\tgb[1]{#1}+\cdots+\tgb[#2-1]{#1}^{#2-1}+\tgb[#2]{#1}^{#2}}
 \newcommand{\tgdex}[2][s]{\tga[0]+\tga[1]{#1}+\cdots+\tga[#2-1]{#1}^{#2-1}+{#1}^{#2}}
-\newcommand{\tgdexGen}[2][s]{\tga[0]+\tga[1]{#1}+\cdots+\tga[#2-1]{#1}^{#2-1}+\tga[#2]{#1}^{#2}} 
+\newcommand{\tgdexGen}[2][s]{\tga[0]+\tga[1]{#1}+\cdots+\tga[#2-1]{#1}^{#2-1}+\tga[#2]{#1}^{#2}}
 %
 \newcommand{\tgra}[1][]{c_{#1}}
 \newcommand{\tgrab}[1][]{\bar{c}_{#1}}
 \newcommand{\tgrb}[1][]{d_{#1}}
 \newcommand{\tgrbb}[1][]{\bar{d}_{#1}}
-\newcommand{\tgrnex}[2][s]{\tgrb[0]+\tgrb[1]{#1}+\cdots+\tgrb[#2-1]{#1}^{#2-1}+\tgrb[#2]{#1}^{#2}} 
-\newcommand{\tgrnexb}[2][s]{\tgrbb[0]+\tgrbb[1]{#1}+\cdots+\tgrbb[#2-1]{#1}^{#2-1}+\tgrbb[#2]{#1}^{#2}} 
+\newcommand{\tgrnex}[2][s]{\tgrb[0]+\tgrb[1]{#1}+\cdots+\tgrb[#2-1]{#1}^{#2-1}+\tgrb[#2]{#1}^{#2}}
+\newcommand{\tgrnexb}[2][s]{\tgrbb[0]+\tgrbb[1]{#1}+\cdots+\tgrbb[#2-1]{#1}^{#2-1}+\tgrbb[#2]{#1}^{#2}}
 \newcommand{\tgrdex}[2][s]{\tgra[0]+\tgra[1]{#1}+\cdots+\tgra[#2-1]{#1}^{#2-1}+{#1}^{#2}}
 \newcommand{\tgrdexb}[2][s]{\tgrab[0]+\tgrab[1]{#1}+\cdots+\tgrab[#2-1]{#1}^{#2-1}+{#1}^{#2}}
-\newcommand{\tgrdexGen}[2][s]{\tgra[0]+\tgra[1]{#1}+\cdots+\tgra[#2-1]{#1}^{#2-1}+\tgra[#2]{#1}^{#2}} 
+\newcommand{\tgrdexGen}[2][s]{\tgra[0]+\tgra[1]{#1}+\cdots+\tgra[#2-1]{#1}^{#2-1}+\tgra[#2]{#1}^{#2}}
 %
 \newcommand{\polyp}[1][\css]{\lap{p}#1}
 \newcommand{\polyq}[1][\css]{\lap{q}#1}
@@ -1185,12 +1180,12 @@
 \newcommand{\tgvb}[1][]{h_{#1}}
 \newcommand{\tgvbb}[1][]{\bar{h}_{#1}}
 \newcommand{\tgvnex}[2][s]{\tgvb[0]+\tgvb[1]{#1}+\cdots+\tgvb[#2-1]{#1}^{#2-1}+\tgvb[#2]{#1}^{#2}}
-\newcommand{\tgvnexb}[2][s]{\tgvbb[0]+\tgvbb[1]{#1}+\cdots+\tgvbb[#2-1]{#1}^{#2-1}+\tgvbb[#2]{#1}^{#2}} 
+\newcommand{\tgvnexb}[2][s]{\tgvbb[0]+\tgvbb[1]{#1}+\cdots+\tgvbb[#2-1]{#1}^{#2-1}+\tgvbb[#2]{#1}^{#2}}
 \newcommand{\tgvdex}[2][s]{\tgva[0]+\tgva[1]{#1}+\cdots+\tgva[#2-1]{#1}^{#2-1}+\tgva[#2]{#1}^{#2}}
 
 %Stability criteria
 \newcommand{\swa}[1][\tgny]{\Delta\arg(#1)} %stetige Winkeländerung
-\newcommand{\swab}[1][\tgny]{\Delta\arg\bigl(#1\bigr)} 
+\newcommand{\swab}[1][\tgny]{\Delta\arg\bigl(#1\bigr)}
 \newcommand{\Swa}[1][\tgny]{\Delta\arg\left(#1\right)}
 \newcommand{\phaseres}{\phi}
 
@@ -1223,7 +1218,7 @@
 %====================================
 
 %====================================
-%Ackermann 
+%Ackermann
 %====================================
 \newcommand{\ackpolyco}[1]{p_{#1}}
 \newcommand{\ackpolydes}[2][\evl]{\ackpolyco{0}+\ackpolyco{1}#1+\ldots+\ackpolyco{#2-1}#1^{#2-1}+#1^{#2}}
@@ -1236,7 +1231,7 @@
 \newcommand{\ecpob}[1][(\evl)]{\obs{p}#1} %Characteristic polynomial
 
 %====================================
-%EA decoupling 
+%EA decoupling
 %====================================
 \newcommand{\relgrad}{r}
 \newcommand{\relgradv}[1]{r_{#1}}
@@ -1373,15 +1368,15 @@
 \newcommand{\TxoptM}{\TpM[{\xvopt[]}]}
 \newcommand{\lagf}{l}
 \newcommand{\mlagf}{L}
-\newcommand{\mlagfR}[1][\TxoptM]{\mlagf_{#1}} 
+\newcommand{\mlagfR}[1][\TxoptM]{\mlagf_{#1}}
 \newcommand{\lagms}[2][\cts]{\lambda_{#2}#1}
 \newcommand{\dlagms}[2][\cts]{\dot{\lambda}_{#2}#1}
 \newcommand{\lagmsp}[2][\cts]{\bar{\lambda}_{#2}#1}
-\newcommand{\dlagmsp}[2][\cts]{\dot{\bar{\lambda}}_{#2}#1} 
+\newcommand{\dlagmsp}[2][\cts]{\dot{\bar{\lambda}}_{#2}#1}
 \newcommand{\lagmsopt}[2][\cts]{\lambda^\ast_{#2}#1}
 \newcommand{\dlagmsopt}[2][\cts]{\dot{\lambda}^\ast_{#2}#1}
-\newcommand{\lagmspopt}[2][\cts]{\bar{\lambda}^\ast_{#2}#1} 
-\newcommand{\dlagmspopt}[2][\cts]{\dot{\bar{\lambda}}^\ast_{#2}#1} 
+\newcommand{\lagmspopt}[2][\cts]{\bar{\lambda}^\ast_{#2}#1}
+\newcommand{\dlagmspopt}[2][\cts]{\dot{\bar{\lambda}}^\ast_{#2}#1}
 \newcommand{\lagmv}[1][\cts]{\vec{\lambda}#1}
 \newcommand{\lagmvp}[1][\cts]{\bar{\vec{\lambda}}#1}
 \newcommand{\dlagmv}[1][\cts]{\dot{\vec{\lambda}}#1}
@@ -1444,5 +1439,3 @@
 \newcommand{\dlagmvh}[1][\cts]{\dot{\!\hat{\vec{\lambda}}}#1}
 \newcommand{\dlagmvhj}[2][\cts]{%
   \dlagmvh[\raise0.75pt\hbox{$^{#2}$}#1]}
-
-
